@@ -1,38 +1,64 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Classes and IDs</title>
-  </head>
-  <body>
-    <h1>Spacing & Selectors</h1>
 
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Classes, IDs & Spacing</title>
+  </head>
+
+  <body>
+    <h1>Classes, IDs & Spacing</h1>
+
+    <!--
+  CLASSES & IDs
+
+  Classes can be reused on multiple elements, while IDs
+  should be unique to a single element.
+-->
     <section id="paragraph-section">
       <p class="red-text">
-        We can use classes to target multiple elements - allowing us to style
-        them all together.
-      </p>
-
-      <p>Specificity determines which targeting takes priority.</p>
-
-      <p class="red-text">
-        A class has more specificity than a general selector and will always
-        take priority over it.
-      </p>
-
-      <p class="red-text" id="green-text">
-        ID has more specificity than class. Inline CSS > ID > Class > general
-        selector
+        We can use classes to target multiple elements, allowing us to style
+        several elements in the same way.
       </p>
 
       <p>
-        We can use !important to place a property/value to the top of the
-        specificity. If multiple selectors have !important, regular rules apply
+        When multiple CSS rules target the same element, specificity determines
+        which rule takes priority.
+      </p>
+
+      <p class="red-text">
+        A class selector has higher specificity than a general element selector,
+        so the class rule takes priority when both target the same property.
+      </p>
+
+      <p class="red-text" id="green-text">
+        An ID selector has higher specificity than a class selector. In general,
+        specificity follows this order: inline styles &gt; IDs &gt; classes &gt;
+        element selectors.
+      </p>
+
+      <p class="important-text">
+        We can use <code>!important</code> to give a declaration very high
+        priority. However, it should be used sparingly.
+      </p>
+
+      <p>
+        If multiple declarations use <code>!important</code>, the normal CSS
+        rules for specificity and the cascade still determine which declaration
+        wins.
       </p>
     </section>
 
+    <!--
+  TARGETING ELEMENTS WITHIN OTHER ELEMENTS
+
+  These buttons share the "btn" class, while some also have
+  the "section-btn" class.
+-->
     <button class="btn">Click me!</button>
 
     <section id="button-section">
@@ -40,31 +66,50 @@
       <button class="btn section-btn">Click me!</button>
       <button>Click me!</button>
 
+      <!-- Demonstrates elements nested inside other elements. -->
       <div>
-        <div><button class="btn">Click me</button></div>
+        <div>
+          <button class="btn">Click me!</button>
+        </div>
       </div>
     </section>
 
+    <!--
+  MARGIN COLLAPSING
+
+  When the vertical margins of two block-level elements meet,
+  they can collapse into a single margin rather than being
+  added together.
+-->
     <section id="products-section">
       <p>
-        Between two block level elements, margins will collapse into eachother
-        and combine. These sections have 50px margin on top and bottom, we only
-        end up with 50px, not 100px between the sections.
+        When the vertical margins of two block-level elements meet, the margins
+        can collapse into a single margin. For example, if one section has 50px
+        of bottom margin and the next has 50px of top margin, the space between
+        them will usually be 50px rather than 100px.
       </p>
     </section>
 
+    <!-- Demonstrates the CSS box-sizing property. -->
     <div id="border-box-example">Hello</div>
   </body>
 </html>
 
-<!-- Topics:
+<!--
+  LESSON TOPICS
+
   - CSS Reset
-  - box-sizing: border:box
+  - box-sizing: border-box
   - Margin
   - Collapsing Margins
   - Padding
   - Border
   - Classes
   - IDs
+  - CSS specificity
   - !important
-  - Targeting elements in other elements -->
+  - Descendant selectors
+  - Child selectors
+  - :hover
+  - :active
+-->
