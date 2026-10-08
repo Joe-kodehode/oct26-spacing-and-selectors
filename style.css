@@ -1,0 +1,121 @@
+/* CSS Reset */
+/* box-sizing: border box will remove padding and border from our elements width/height */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 10px;
+}
+
+h1 {
+  background-color: aqua;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: blue;
+  padding: 5px;
+}
+
+button {
+  margin: 5px;
+  padding: 5px 10px;
+}
+
+#green-text {
+  color: green !important;
+}
+
+.red-text {
+  color: red !important;
+}
+
+#paragraph-section {
+  border: 2px solid red;
+}
+
+#button-section {
+  border: 2px solid blue;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.section-btn {
+  background-color: white;
+  color: black;
+}
+
+/* Targets ALL children, not just direct children */
+#button-section .btn {
+  background-color: blue;
+  color: aqua;
+}
+
+/* targets only direct children */
+#button-section > .btn {
+  background-color: lightcoral;
+  color: black;
+}
+
+/* #button-section div div button {
+  background-color: green;
+  color: white;
+} */
+
+/* Spacing */
+
+section {
+  /* padding: 10px;
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  margin-left: 5px; */
+
+  /* shorthand for top+bottom / left+right */
+  /* margin: 10px 5px; */
+
+  /* top / right / bottom / left */
+  /* margin: 20px 15px 10px 5px; */
+
+  /* top / left + right / bottom */
+  /* margin: 20px 10px 5px; */
+
+  margin: 50px 0;
+}
+
+#products-section {
+  border: green 2px solid;
+}
+
+/* border-box */
+
+#border-box-example {
+  display: inline-block;
+  background-color: bisque;
+  border: 2px solid burlywood;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
+
+/* hover on button */
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 5px grey;
+}
+
+button:active {
+  border: 3px solid lightblue;
+  transform: translateY(0px);
+  box-shadow: inset 5px 5px 5px grey;
+}

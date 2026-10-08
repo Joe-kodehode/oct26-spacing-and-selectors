@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Classes and IDs</title>
+  </head>
+  <body>
+    <h1>Spacing & Selectors</h1>
+
+    <section id="paragraph-section">
+      <p class="red-text">
+        We can use classes to target multiple elements - allowing us to style
+        them all together.
+      </p>
+
+      <p>Specificity determines which targeting takes priority.</p>
+
+      <p class="red-text">
+        A class has more specificity than a general selector and will always
+        take priority over it.
+      </p>
+
+      <p class="red-text" id="green-text">
+        ID has more specificity than class. Inline CSS > ID > Class > general
+        selector
+      </p>
+
+      <p>
+        We can use !important to place a property/value to the top of the
+        specificity. If multiple selectors have !important, regular rules apply
+      </p>
+    </section>
+
+    <button class="btn">Click me!</button>
+
+    <section id="button-section">
+      <button class="btn section-btn">Click me!</button>
+      <button class="btn section-btn">Click me!</button>
+      <button>Click me!</button>
+
+      <div>
+        <div><button class="btn">Click me</button></div>
+      </div>
+    </section>
+
+    <section id="products-section">
+      <p>
+        Between two block level elements, margins will collapse into eachother
+        and combine. These sections have 50px margin on top and bottom, we only
+        end up with 50px, not 100px between the sections.
+      </p>
+    </section>
+
+    <div id="border-box-example">Hello</div>
+  </body>
+</html>
+
+<!-- Topics:
+  - CSS Reset
+  - box-sizing: border:box
+  - Margin
+  - Collapsing Margins
+  - Padding
+  - Border
+  - Classes
+  - IDs
+  - !important
+  - Targeting elements in other elements -->
